@@ -3,7 +3,7 @@
     "path": "~/Library/CloudStorage/OneDrive-Personal/Desktop/proyectos_r/1-personales/goat/website/_quarto.yml",
     "project_path": "_quarto.yml",
     "type": "yaml",
-    "hash": "1373600451",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1673710450583.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "9,22",
+        "cursorPosition": "2,18",
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1673715207,
+    "lastKnownWriteTime": 1673719037,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1673715207876,
+    "last_content_update": 1673719037129,
     "read_only": false,
     "read_only_alternatives": []
 }
