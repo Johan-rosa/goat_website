@@ -2,18 +2,22 @@ project:
   type: website
 
 website:
-  title: "website"
+  title: "Goat"
   navbar:
+    background: dark
     left:
       - href: index.qmd
-        text: Home
-      - about.qmd
+        text: Miembros
+      - href: tesoreria.qmd
+        text: Aportes
+      - href: reglas.qmd
+        text: Reglas
 
 format:
   html:
     theme: cosmo
     css: styles.css
-    toc: true
+    toc: false
 
 
 

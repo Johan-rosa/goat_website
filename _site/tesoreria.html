@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Goat – tesoreria</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+<script src="site_libs/core-js-2.5.3/shim.min.js"></script>
+<script src="site_libs/react-17.0.0/react.min.js"></script>
+<script src="site_libs/react-17.0.0/react-dom.min.js"></script>
+<script src="site_libs/reactwidget-1.0.0/react-tools.js"></script>
+<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="site_libs/reactable-0.4.0/reactable.css" rel="stylesheet">
+<script src="site_libs/reactable-binding-0.4.0/reactable.js"></script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Goat</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">
+ <span class="menu-text">Miembros</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./tesoreria.html" aria-current="page">
+ <span class="menu-text">Aportes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./reglas.html">
+ <span class="menu-text">Reglas</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+<!-- main -->
+
+
+
+<div class="cell">
+
+</div>
+
+<style>
+@media only screen and (max-width: 800px) {
+  body {
+    font-size: 14px;
+    padding: 5px;
+  }
+  h2{
+  margin-top: 20px;
+  font-size: 16px;
+}
+}
+
+h2{
+ border-bottom: none;
+}
+
+.aportes-table {
+  margin-top: 1rem;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  height: 70vh;
+}
+
+.header {
+  background-color: hsl(213, 45%, 97%);
+  border-bottom-color: hsl(213, 33%, 93%);
+  border-bottom-width: 1px;
+  border-top: 1px solid hsl(213, 33%, 93%);
+  color: hsl(213, 13%, 33%);
+}
+
+.rt-tbody{
+border: 1px solid hsl(213, 33%, 93%);
+}
+
+.header[aria-sort]:hover,
+.header[aria-sort]:focus {
+  color: hsl(213, 55%, 50%);
+}
+
+</style>
+<section id="tabla-de-aportes-al-18-de-december-del-2022" class="level2 px-md-5 d-flex flex-column align-items-center">
+<h2 class="px-md-5 d-flex flex-column align-items-center" data-anchor-id="tabla-de-aportes-al-18-de-december-del-2022">Tabla de aportes al 18 de December del 2022</h2>
+<div class="{d-flex}">
+<p><span class="badge bg-success">Ingreso 12,055</span> <i class="fa-solid fa-minus" aria-label="minus"></i> <span class="badge bg-danger">Gasto 6,123</span> <i class="fa-solid fa-equals" aria-label="equals"></i> <span class="badge bg-primary">Balance 5,932</span></p>
+</div>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Ingreso</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Gastos</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Multas a cobrar</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="htmlwidget-4e782b60b9dcff82dac9" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-4e782b60b9dcff82dac9">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"miembro":["Johan","Carlos","Kibelo","Jordan","Joel","Rubio","Yeyo","Randy","Javier","Invitados","Alfredo","Chamo","Cristopher","Anuel","Punto","Frandy","Sin detalle","Elio","Robert","Orlando","Omaury","Rayder","Michy","Julio","Kawai","Jeicol","Kukito","Rusbel","Tipo raro","Manuel","Edwin","Melvin","Rafael","Ronald","Marcus","Chory","Darwin","Jeremy"],"cantidad_aportes":[9,13,5,12,14,9,11,15,7,8,10,7,6,6,7,6,2,6,6,4,5,4,2,3,2,3,4,3,1,1,2,2,1,1,1,1,1,1],"total":[1480,1225,775,705,620,600,550,525,500,495,440,360,360,270,260,250,230,230,230,200,200,175,150,150,150,150,135,110,100,100,75,55,50,50,25,25,25,25]},"columns":[{"id":".details","name":"","type":null,"headerClassName":"header","sortable":false,"resizable":false,"filterable":false,"searchable":false,"width":45,"align":"center","details":[{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-12-18","2022-12-11","2022-10-23","2022-10-09","2022-09-11","2022-07-10","2022-06-26","2022-06-19","2022-06-12"],"aporte":[100,1000,100,50,50,50,50,50,30]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"984acedd242a309a9a8a7f75aa685ba9","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-12-18","2022-12-11","2022-12-04","2022-11-27","2022-11-13","2022-10-23","2022-10-16","2022-10-09","2022-08-22","2022-07-24","2022-07-10","2022-06-26","2022-06-12"],"aporte":[100,200,100,100,100,100,75,50,50,100,100,100,50]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"4c2b8ddeb85c11e778f04274cb446df8","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-12-18","2022-12-04","2022-10-09","2022-06-26","2022-06-19"],"aporte":[50,100,550,50,25]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"ace7be5662cf637c209f5ba1502696b3","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-12-18","2022-12-11","2022-12-04","2022-11-13","2022-10-30","2022-10-16","2022-10-09","2022-09-11","2022-08-22","2022-07-10","2022-06-26","2022-06-12"],"aporte":[100,100,100,50,50,30,50,50,50,50,50,25]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"32ae34eb5817d235efc138484c421234","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-12-18","2022-12-11","2022-12-04","2022-11-13","2022-11-06","2022-10-30","2022-10-23","2022-10-16","2022-10-09","2022-09-11","2022-08-22","2022-07-24","2022-06-26","2022-06-12"],"aporte":[25,100,30,50,40,50,25,50,50,20,50,50,50,30]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"44ff531272933b95e9528a025d134db6","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-12-18","2022-11-13","2022-11-06","2022-10-16","2022-10-09","2022-09-11","2022-07-24","2022-07-10","2022-06-26"],"aporte":[100,50,50,100,50,100,50,50,50]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"6f7546137f825f9d78ca02b4660d1fde","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-12-11","2022-12-04","2022-11-06","2022-10-30","2022-10-23","2022-10-16","2022-10-09","2022-09-11","2022-06-26","2022-06-19","2022-06-12"],"aporte":[50,50,50,50,50,50,50,50,50,50,50]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"810f78205a556b001ae73e7a4892d361","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-12-18","2022-12-11","2022-12-04","2022-11-27","2022-11-13","2022-10-30","2022-10-23","2022-10-16","2022-10-09","2022-09-11","2022-08-22","2022-07-24","2022-06-26","2022-06-19","2022-06-12"],"aporte":[50,50,50,50,50,25,25,25,25,25,50,25,25,25,25]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"dac87ace7133f2da0dbc34e66ac1e7ea","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-12-18","2022-12-04","2022-11-13","2022-09-11","2022-07-10","2022-06-19","2022-06-12"],"aporte":[100,100,100,50,50,50,50]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"9c5145f1a802e21f026848b6c66e52d6","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-12-18","2022-12-11","2022-11-13","2022-10-23","2022-09-11","2022-07-24","2022-06-19","2022-06-12"],"aporte":[150,50,25,100,35,50,65,20]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"d41c639e972020459dc6f74e16bb0e53","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-12-18","2022-12-11","2022-11-13","2022-11-06","2022-10-30","2022-10-09","2022-07-24","2022-07-10","2022-06-26","2022-06-19"],"aporte":[35,50,50,100,20,45,15,25,50,50]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"3cc0dd318041a2e4db7243ef83b1d8c5","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-12-04","2022-11-06","2022-10-23","2022-08-22","2022-07-24","2022-06-19","2022-06-12"],"aporte":[100,10,50,50,50,50,50]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"f22516409c2b35ddbc48895c2a98f67b","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-12-18","2022-11-13","2022-11-06","2022-10-09","2022-08-22","2022-07-10"],"aporte":[100,35,25,100,50,50]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"bbff0a7ae4537d25a84ae2f23b8c5728","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-10-30","2022-10-09","2022-07-24","2022-07-10","2022-06-26","2022-06-12"],"aporte":[45,50,50,50,50,25]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"42dc12da78142dbc697b711b645154f9","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-12-18","2022-11-06","2022-10-30","2022-09-11","2022-07-10","2022-06-26","2022-06-12"],"aporte":[50,30,50,30,30,50,20]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"ce6dda8cec5ff7e235a58b45f1f08b13","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-10-09","2022-09-11","2022-07-10","2022-06-26","2022-06-19","2022-06-12"],"aporte":[50,50,50,25,25,50]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"164e9b857268681ea0dbaf7171d9aa79","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-08-14","2022-05-29"],"aporte":[150,80]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"a05ab25ab50dc6e47076d355d0678127","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-12-11","2022-11-06","2022-10-16","2022-07-24","2022-06-26","2022-06-19"],"aporte":[30,50,50,25,50,25]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"0d1ac49ed5d7b56ebe0dc17f867fa590","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-12-04","2022-11-06","2022-10-23","2022-10-09","2022-06-26","2022-06-19"],"aporte":[35,10,50,35,50,50]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"366210831c46c621051b990bf0818b4a","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-10-23","2022-07-10","2022-06-26","2022-06-12"],"aporte":[100,25,25,50]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"37027b8724d7ae2a22e2982fc136a93f","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-12-18","2022-12-11","2022-11-27","2022-10-09","2022-06-12"],"aporte":[50,50,25,50,25]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"c22f22de746bfc06b30870ea234b287b","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-12-18","2022-12-11","2022-11-13","2022-10-23"],"aporte":[50,50,50,25]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"2c4f4082ba579d6009166e46b92ac74b","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-12-11","2022-10-09"],"aporte":[100,50]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"87a8ac3af0e18bd868ee0dc1e0a37f09","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-12-11","2022-11-06","2022-10-09"],"aporte":[50,50,50]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"270b4c0493b2dfd6eb4c63fd731fd576","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-12-11","2022-11-06"],"aporte":[100,50]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"674bbc19e82124ce9f3c4145155b1f34","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-12-18","2022-12-04","2022-11-27"],"aporte":[50,50,50]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"23ba49076ef9f90886124d7d93b8ba1f","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-12-18","2022-12-11","2022-12-04","2022-11-27"],"aporte":[50,25,50,10]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"8e67ac59072e01b17d60d2ba944349ac","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-12-11","2022-11-13","2022-11-06"],"aporte":[50,35,25]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"af2a52253a2df0e55d01a28b5f105a3c","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-12-04"],"aporte":[100]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"9bd0dab5f70df7d1b04a1a77f491da99","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-12-11"],"aporte":[100]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"3ec8e351cc5736def64a81fa9e53a0e5","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-07-10","2022-06-19"],"aporte":[25,50]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"991f209bc2dde37c28692901e6d55506","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-12-04","2022-11-06"],"aporte":[25,30]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"21a05009a39afdd7a44f793c9b0c9912","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-06-19"],"aporte":[50]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"c403bbf6a10dc8df599175f4ca106398","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-10-09"],"aporte":[50]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"982bf93d57172e293cfb626d9b5497b9","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-06-12"],"aporte":[25]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"bacc7334eedbc1ddce07810e06b733ee","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-07-10"],"aporte":[25]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"612230a0a98ce4ea5ce5adf039f94159","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-10-23"],"aporte":[25]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"fb475a3e0239bd43996a93dc4d208b5d","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"style":{"padding":"1rem"}},"children":[{"name":"Reactable","attribs":{"data":{"fecha":["2022-11-06"],"aporte":[25]},"columns":[{"id":"fecha","name":"fecha","type":"Date"},{"id":"aporte","name":"aporte","type":"numeric"}],"outlined":true,"dataKey":"f297d85f5a15446c105e2d5ae0d85041","static":false,"nested":true},"children":[]}]}]},{"id":"miembro","name":"Miembro","type":"character","headerClassName":"header"},{"id":"cantidad_aportes","name":"Aportes","type":"numeric","headerClassName":"header"},{"id":"total","name":"Total","type":"numeric","headerClassName":"header","format":{"cell":{"separators":true},"aggregated":{"separators":true}}}],"searchable":true,"pagination":false,"className":"aportes-table","inline":true,"dataKey":"fd1b039f8d64fa82c48e17f69d02caaa"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="htmlwidget-e3a53a8e28d33f73b731" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-e3a53a8e28d33f73b731">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Fecha":["2022-05-29","2022-06-12","2022-06-19","2022-06-26","2022-07-10","2022-07-24","2022-08-22","2022-09-11","2022-10-09","2022-10-23","2022-10-23","2022-11-13","2022-11-27","2022-12-04","2022-12-11","2022-12-16","2022-12-18"],"Concepto":["Agua y hielo","Agua y hielo","Agua y hielo","Agua y hielo","Agua y hielo","Agua y hielo","Agua y hielo","Agua y hielo","Agua y hielo","Agua, hielo y vasos","Mascota, carpeta, lapiceros","Agua, hielo y vasos","Agua, hielo y vasos","Agua y hielo","Arbitro, agua y hielo","Aporte al mono (para medallas)","Arbitro, agua y hielo"],"Monto":[180,180,185,185,250,200,200,200,150,200,443,200,0,150,950,1500,950]},"columns":[{"id":"Fecha","name":"Fecha","type":"Date","headerClassName":"header"},{"id":"Concepto","name":"Concepto","type":"character","headerClassName":"header","minWidth":150},{"id":"Monto","name":"Monto","type":"numeric","headerClassName":"header","format":{"cell":{"separators":true},"aggregated":{"separators":true}}}],"className":"aportes-table","dataKey":"da06190f379e7f328e39ccd51e1e1b6b"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="htmlwidget-39ec10848dfdfc58d7a1" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-39ec10848dfdfc58d7a1">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Fecha":["2022-12-11","2022-12-18"],"Deudor":["Julio","Kibelo"],"Concepto":["Técnica","Técnica"],"Monto":[100,100]},"columns":[{"id":"Fecha","name":"Fecha","type":"Date","width":100,"headerClassName":"header"},{"id":"Deudor","name":"Deudor","type":"character","width":90,"headerClassName":"header"},{"id":"Concepto","name":"Concepto","type":"character","width":90,"headerClassName":"header"},{"id":"Monto","name":"Monto","type":"numeric","width":90,"headerClassName":"header"}],"className":"aportes-table","dataKey":"5b7620e098d99945e79d37acbca85d4f"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
+
+
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

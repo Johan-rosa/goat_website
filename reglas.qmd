@@ -1,0 +1,80 @@
+---
+title: "Reglas de la liga"
+---
+
+<style> li {margin-bottom: 10px;} </style>
+
+## Sobre el Juego
+
+1. Los juegos inician con jump ball, no con saque de banda. Solo se inicia con saque de banda si no hay un árbitro
+2. El jump ball se lanza con todos los miembros de cada equipo en alas contrarias de la cancha.
+3. Los juegos son a 21 puntos
+4. No hay nock out
+5. Los juegos pueden terminar con tiros libres, de cualquier tipo, incluso faltas técnicas
+6. Se tiran 2 tiros libres por faltas, ya sean defensivas o de cualquier otro tipo cuando se esté en colectiva
+7. A las 7 faltas hay colectiva
+8. Por faltas técnicas se tira solo un tiro libre
+
+## Sobre los cantes permitidos
+-	Outside
+-	**Faltas:** ofensivas, defensivas, técnicas, antideportivas
+-	3 segundos ofensivos (solamente ofensivos)
+-	Atraso de balón
+-	Doble
+-	Running
+-	Jump ball
+
+## Sobre la lista y el orden de llegada y orden de juego
+
+1. Se juega en orden de llegada
+2. En el primer juego solo juegan miembros, a menos que no haya suficientes. No importa si algún invitado llegó antes
+3. Los dos primeros en llegar piden, si alguno no quiere debe ceder la oportunidad a otro de los 10 que llegaron primero
+4. Los jugadores pueden cambiar su turno con otros jugadores o invitados. Cuando se hace esto el jugador que cedió su turno ocupa exactamente el lugar que le tocaba al que recibió el turno
+5. Los que juegan atrás (restan) tienen que pitar y anotar, a menos que haya un voluntario. Si los que le toca no quieren pitar, el que lo haga tiene oportunidad de jugar en el próximo juego, dejando fu ra al último que llegó de los que estaban en cola
+6. Solo entra un invitado por juego
+7. Miembro que llegue tarde no podrá jugar delante de ningún otro miembro al que no haya visto perder.
+8. Los miembros de la liga tienen privilegios sobre los invitados en cuanto al orden de llegada.
+
+## Sobre los ingresos, gastos y fondos de la liga
+
+### Ingresos
+1. **Cuotas de los miembros:** mínimo RD$ 300 mensual. 
+2. **Aporte de invitados:** al menos RD$ 100
+3. **Multas por técnicas:** RS$ 100
+4. **Multa por peleas:** RD$ 500
+5. **Donaciones:** abiertas
+
+### Gastos
+1. Compra de agua y hielo
+2. Arbitro
+3. Compra de balones, pitos y otros elementos propios del juego
+4. **Aportes a la comunidad:** donación para arreglar aros, pintar la cancha, etc
+5. Gastos en viajes de la liga para jugar como invitados en otros lugares
+6. Cualquier gasto fuera de estos fines se someterá a votación en el grupo de whatsapp
+
+
+## Sobre el comité de organización y disciplina
+
+La liga cuenta con un comité de disciplina conformado por un grupo selecto de miembros fundadores. Este comité se encargará de las cuestiones disciplinarias y administrativas de la liga.
+
+### Responsabilidades del comité
+
+- Colectar los aportes de los miembros e invitados
+- Evaluar y aprobar las multas. Es probable que a alguien le canten una técnica inmerecida y sería injusto que esa persona tenga que pagar, por ejemplo
+- Gestionar las compras de todo tipo con los fondos de la liga
+- Rendir cuentas periódicamente sobre el flujo de efectivo del fondo. Esos reportes deben ser detallados a nivel de miembro, siempre que sea posible
+- Aprobar la entrada de nuevos miembros
+- Aplicar las sanciones disciplinarias (suspensiones)
+
+### Miembros del comité
+
+- **Presidente y capitán:** Jordan Rosa
+- **Tesorero y secretario:** Johan Rosa
+- **Consejero principal:** El Rubio
+- **Miembro fundador:** Joel
+- **Miembro fundador:** Kibelo
+- **Miembro fundador:** Robert
+
+
+
+

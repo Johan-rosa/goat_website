@@ -1,0 +1,21 @@
+---
+title: "Testing HTML elements"
+output: html_document
+---
+
+```{r}
+library(htmltools)
+```
+
+
+```{r}
+div(
+  class = "member",
+  img(src = "../images/avatars/jordan.png"),
+  div(
+    h3("jordan"),
+    h4("# 24")
+  )
+)
+```
+
