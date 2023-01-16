@@ -14,13 +14,17 @@ miembros <- readxl::read_excel("data/miembros.xlsx") |>
 
 
 miembros_card <- function(name, avatar) {
-  member <- htmltools::div(
-    class = "member-card",
-    htmltools::div(
-      class = "img-container",
-      htmltools::img(src = file.path("images/avarts", avatar))
-    ),
-    htmltools::h5(name)
+  member <- glue::glue(
+"
+<div class='member-card'>
+<div class='img-container'>
+<img src='images/avatars/{ avatar }'/>
+</div>
+
+<h5> { name } </h5>
+</div>
+
+"
   )
 }
 
@@ -61,98 +65,111 @@ img{
 </style>
 
 
+<div class = "members">
 
-<div class="members">
-
-<div class="member-card">
-<div class="img-container">
-<img src="images/avatars/johan.jpg"/>
-</div>
-<h5>Johan Rosa</h5>
+<div class='member-card'>
+<div class='img-container'>
+<img src='images/avatars/johan.jpg'/>
 </div>
 
-<div class="member-card">
-<div class="img-container">
-<img src="images/avatars/randy.jpeg"/>
-</div>
-<h5>Randy Brens</h5>
+<h5> Johan Rosa </h5>
 </div>
 
-<div class="member-card">
-<div class="img-container">
-<img src="images/avatars/punto.jpg"/>
-</div>
-<h5>Johansys</h5>
+<div class='member-card'>
+<div class='img-container'>
+<img src='images/avatars/randy.jpeg'/>
 </div>
 
-<div class="member-card">
-<div class="img-container">
-<img src="images/avatars/joel.jpeg"/>
-</div>
-<h5>Joel</h5>
+<h5> Randy Brens </h5>
 </div>
 
-<div class="member-card">
-<div class="img-container">
-<img src="images/avatars/cristopher.jpg"/>
-</div>
-<h5>Christopher</h5>
+<div class='member-card'>
+<div class='img-container'>
+<img src='images/avatars/punto.jpg'/>
 </div>
 
-<div class="member-card">
-<div class="img-container">
-<img src="images/avatars/kukito.jpg"/>
-</div>
-<h5>Kukito</h5>
+<h5> Johansys </h5>
 </div>
 
-<div class="member-card">
-<div class="img-container">
-<img src="images/avatars/alfredo.jpeg"/>
-</div>
-<h5>Alfredo</h5>
+<div class='member-card'>
+<div class='img-container'>
+<img src='images/avatars/joel.jpeg'/>
 </div>
 
-<div class="member-card">
-<div class="img-container">
-<img src="images/avatars/omauri.jpg"/>
-</div>
-<h5>Omaury</h5>
+<h5> Joel </h5>
 </div>
 
-<div class="member-card">
-<div class="img-container">
-<img src="images/avatars/carlos.jpg"/>
-</div>
-<h5>Carlos</h5>
+<div class='member-card'>
+<div class='img-container'>
+<img src='images/avatars/cristopher.jpg'/>
 </div>
 
-<div class="member-card">
-<div class="img-container">
-<img src="images/avatars/kawai.jpg"/>
-</div>
-<h5>Kawai</h5>
+<h5> Christopher </h5>
 </div>
 
-<div class="member-card">
-<div class="img-container">
-<img src="images/avatars/rayder.jpg"/>
-</div>
-<h5>Rayder</h5>
+<div class='member-card'>
+<div class='img-container'>
+<img src='images/avatars/kukito.jpg'/>
 </div>
 
-<div class="member-card">
-<div class="img-container">
-<img src="images/avatars/jeicol.jpg"/>
-</div>
-<h5>Jeicol</h5>
+<h5> Kukito </h5>
 </div>
 
-<div class="member-card">
-<div class="img-container">
-<img src="images/avatars/yeyo.jpg"/>
+<div class='member-card'>
+<div class='img-container'>
+<img src='images/avatars/alfredo.jpeg'/>
 </div>
-<h5>Yeyo</h5>
+
+<h5> Alfredo </h5>
 </div>
+
+<div class='member-card'>
+<div class='img-container'>
+<img src='images/avatars/omauri.jpg'/>
+</div>
+
+<h5> Omaury </h5>
+</div>
+
+<div class='member-card'>
+<div class='img-container'>
+<img src='images/avatars/carlos.jpg'/>
+</div>
+
+<h5> Carlos </h5>
+</div>
+
+<div class='member-card'>
+<div class='img-container'>
+<img src='images/avatars/kawai.jpg'/>
+</div>
+
+<h5> Kawai </h5>
+</div>
+
+<div class='member-card'>
+<div class='img-container'>
+<img src='images/avatars/rayder.jpg'/>
+</div>
+
+<h5> Rayder </h5>
+</div>
+
+<div class='member-card'>
+<div class='img-container'>
+<img src='images/avatars/jeicol.jpg'/>
+</div>
+
+<h5> Jeicol </h5>
+</div>
+
+<div class='member-card'>
+<div class='img-container'>
+<img src='images/avatars/yeyo.jpg'/>
+</div>
+
+<h5> Yeyo </h5>
+</div>
+
 
 </div>
