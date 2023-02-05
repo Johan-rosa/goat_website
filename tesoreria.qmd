@@ -84,7 +84,7 @@ tabla_current_month
 
 ### `r stringr::str_to_sentence(format(max(aportes$fecha) - months(1), "%B"))`
 ```{r}
-tabla_current_month
+tabla_last_month
 ```
 
 
