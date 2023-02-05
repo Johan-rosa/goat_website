@@ -9,7 +9,6 @@ library(readxl)
 library(reactable)
 library(purrr)
 
-
 # Preparing data ----------------------------------------------------------
 
 aportes <- read_excel("./data/aportes.xlsx", sheet = "Ingreso") |>
@@ -21,6 +20,11 @@ aportes <- read_excel("./data/aportes.xlsx", sheet = "Ingreso") |>
     month = factor(format(fecha, "%b %Y", locale = "spanish")),
     month = forcats::fct_reorder(label_fecha, fecha)
     )
+
+aportes |> filter(lubridate::year(fecha) == 2023) |>
+  group_by(miembro) |> 
+  summarise(total = sum(aporte)) |>
+  arrange(total)
 
 gastos <- read_excel("./data/aportes.xlsx", sheet = "Gastos") |>
   janitor::clean_names() |>
@@ -103,3 +107,4 @@ tabla_multas <- multas |>
     defaultColDef = colDef(headerClass = "header", width = 90),
     columns = list(Fecha = colDef(width = 100))
   )
+

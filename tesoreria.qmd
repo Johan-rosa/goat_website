@@ -18,7 +18,6 @@ library(reactable)
 source("logic/fondo_table.R", echo = FALSE, verbose = FALSE)
 ```
 
-
 <style>
 @media only screen and (max-width: 800px) {
   body {

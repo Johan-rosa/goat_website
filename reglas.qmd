@@ -34,6 +34,8 @@ title: "Reglas de la liga"
 6. Solo entra un invitado por juego
 7. Miembro que llegue tarde no podrá jugar delante de ningún otro miembro al que no haya visto perder.
 8. Los miembros de la liga tienen privilegios sobre los invitados en cuanto al orden de llegada.
+9. Los miembros que lleven su chaqueta juegan como invitados ese día
+10. Los que están al día con la cuota de la liga juegan primero que los que no estén al día, sin importar el orden de llegada
 
 ## Sobre los ingresos, gastos y fondos de la liga
 
