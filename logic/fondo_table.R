@@ -1,5 +1,5 @@
 
-Sys.setlocale("LC_TIME", "Spanish")
+Sys.setlocale("LC_TIME", "es_ES.UTF-8")
 
 # Packages ----------------------------------------------------------------
 library(dplyr)
@@ -62,7 +62,35 @@ aportes_table_2 <- aportes %>%
     data = map(data, ~.x[,c("fecha", "aporte")] %>% arrange(desc(fecha)))
     ) %>%
   select(miembro, cantidad_aportes, total, data) %>% 
-  arrange(desc(total)) 
+  arrange(desc(total))
+
+current_month <- aportes |>
+  filter(fecha >= lubridate::floor_date(max(fecha), "month")) |>
+  group_by(miembro) |>
+  nest() |>
+  mutate(
+    cantidad_aportes = map_dbl(data, nrow),
+    total = map_dbl(data, ~sum(.x[["aporte"]], na.rm = TRUE)),
+    data = map(data, ~.x[,c("fecha", "aporte")] %>% arrange(desc(fecha)))
+  ) %>%
+  select(miembro, cantidad_aportes, total, data) %>% 
+  arrange(desc(total))
+
+last_month <- aportes |>
+  filter(
+    fecha >= lubridate::floor_date(max(fecha), "month") - months(1),
+    fecha < lubridate::floor_date(max(fecha), "month")
+    ) |>
+  group_by(miembro) |>
+  nest() |>
+  mutate(
+    cantidad_aportes = map_dbl(data, nrow),
+    total = map_dbl(data, ~sum(.x[["aporte"]], na.rm = TRUE)),
+    data = map(data, ~.x[,c("fecha", "aporte")] %>% arrange(desc(fecha)))
+  ) %>%
+  select(miembro, cantidad_aportes, total, data) %>% 
+  arrange(desc(total))
+  
 
 # html table --------------------------------------------------------------
 
@@ -83,6 +111,50 @@ tabla_aportes <- aportes_table_2 %>%
       htmltools::div(
         style = "padding: 1rem",
         reactable(aportes_table_2[["data"]][[index]], outlined = TRUE)
+      )
+    },
+    class = "aportes-table"
+  )
+
+tabla_current_month <- current_month %>%
+  select(-data) %>%
+  arrange(desc(total)) %>% 
+  reactable(
+    fullWidth = FALSE,
+    searchable = TRUE,
+    pagination = FALSE,
+    defaultColDef = colDef(headerClass = "header"),
+    columns = list(
+      miembro = colDef(name = "Miembro"),
+      cantidad_aportes = colDef(name = "Aportes"),
+      total = colDef("Total", format = colFormat(separators = TRUE))
+    ),
+    details = function(index) {
+      htmltools::div(
+        style = "padding: 1rem",
+        reactable(current_month[["data"]][[index]], outlined = TRUE)
+      )
+    },
+    class = "aportes-table"
+  )
+
+tabla_last_month <- last_month %>%
+  select(-data) %>%
+  arrange(desc(total)) %>% 
+  reactable(
+    fullWidth = FALSE,
+    searchable = TRUE,
+    pagination = FALSE,
+    defaultColDef = colDef(headerClass = "header"),
+    columns = list(
+      miembro = colDef(name = "Miembro"),
+      cantidad_aportes = colDef(name = "Aportes"),
+      total = colDef("Total", format = colFormat(separators = TRUE))
+    ),
+    details = function(index) {
+      htmltools::div(
+        style = "padding: 1rem",
+        reactable(last_month[["data"]][[index]], outlined = TRUE)
       )
     },
     class = "aportes-table"
