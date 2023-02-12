@@ -83,7 +83,6 @@ tabla_last_month
 ```
 
 ### Histórico
-
 ```{r}
 tabla_aportes
 ```
