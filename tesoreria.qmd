@@ -76,9 +76,9 @@ border: 1px solid hsl(213, 33%, 93%);
 tabla_current_month
 ```
 
-### `r stringr::str_to_sentence(format(max(aportes$fecha) - months(1), "%B"))`
+### Este año
 ```{r}
-tabla_last_month
+tabla_this_yer
 ```
 
 ### Histórico

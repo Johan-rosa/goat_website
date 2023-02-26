@@ -18,7 +18,8 @@ aportes <- read_excel("./data/aportes.xlsx", sheet = "Ingreso") |>
     label_fecha = factor(format(fecha, "%d %b %Y", locale = "spanish")),
     label_fecha = forcats::fct_reorder(label_fecha, fecha),
     month = factor(format(fecha, "%b %Y", locale = "spanish")),
-    month = forcats::fct_reorder(label_fecha, fecha)
+    month = forcats::fct_reorder(label_fecha, fecha),
+    miembro = str_to_sentence(miembro)
     )
 
 aportes |> filter(lubridate::year(fecha) == 2023) |>
@@ -91,6 +92,16 @@ last_month <- aportes |>
   select(miembro, cantidad_aportes, total, data) %>% 
   arrange(desc(total))
   
+# balance_2023
+this_year <- aportes |>
+  filter(lubridate::year(fecha) == 2023) |>
+  mutate(nmonth = max(lubridate::month(fecha))) |>
+  group_by(miembro) |>
+  summarise(
+    aporte = sum(aporte),
+    objetivo = max(nmonth) * 300,
+    balance = aporte - objetivo
+  )
 
 # html table --------------------------------------------------------------
 
@@ -137,7 +148,7 @@ tabla_current_month <- current_month %>%
     },
     class = "aportes-table"
   )
-
+  
 tabla_last_month <- last_month %>%
   select(-data) %>%
   arrange(desc(total)) %>% 
@@ -180,3 +191,17 @@ tabla_multas <- multas |>
     columns = list(Fecha = colDef(width = 100))
   )
 
+tabla_this_yer <- this_year |>
+  arrange(balance) |> 
+  reactable(
+    class = "aportes-table",
+    defaultColDef = colDef(headerClass = "header"),
+    searchable = TRUE,
+    pagination = FALSE,
+    columns = list(
+      miembro = colDef(name = "Miembro"),
+      aporte = colDef(name = "Aporte"),
+      objetivo = colDef(name = "Objetivo"),
+      balance = colDef(name = "Balance")
+    )
+  )
