@@ -101,6 +101,9 @@ this_year <- aportes |>
     aporte = sum(aporte),
     objetivo = max(nmonth) * 300,
     balance = aporte - objetivo
+  ) |>
+  mutate(
+   aporte = ifelse(miembro == "Mac Daniel", aporte - 300, aporte)
   )
 
 # html table --------------------------------------------------------------
@@ -109,7 +112,7 @@ tabla_aportes <- aportes_table_2 %>%
   select(-data) %>%
   arrange(desc(total)) %>% 
   reactable(
-    fullWidth = FALSE,
+    fullWidth = TRUE,
     searchable = TRUE,
     pagination = FALSE,
     defaultColDef = colDef(headerClass = "header"),
@@ -131,7 +134,7 @@ tabla_current_month <- current_month %>%
   select(-data) %>%
   arrange(desc(total)) %>% 
   reactable(
-    fullWidth = FALSE,
+    fullWidth = TRUE,
     searchable = TRUE,
     pagination = FALSE,
     defaultColDef = colDef(headerClass = "header"),
@@ -153,7 +156,7 @@ tabla_last_month <- last_month %>%
   select(-data) %>%
   arrange(desc(total)) %>% 
   reactable(
-    fullWidth = FALSE,
+    fullWidth = TRUE,
     searchable = TRUE,
     pagination = FALSE,
     defaultColDef = colDef(headerClass = "header"),
@@ -176,6 +179,7 @@ tabla_gastos <- gastos |>
   select(fecha, item, monto) |> 
   setNames(c("Fecha", "Concepto", "Monto")) |>
   reactable(
+    fullWidth = TRUE,
     class = "aportes-table",
     defaultColDef = colDef(headerClass = "header"),
     columns = list(
@@ -186,6 +190,7 @@ tabla_gastos <- gastos |>
 
 tabla_multas <- multas |>
   reactable(
+    fullWidth = TRUE,
     class = "aportes-table",
     defaultColDef = colDef(headerClass = "header", width = 90),
     columns = list(Fecha = colDef(width = 100))
@@ -198,6 +203,7 @@ tabla_this_yer <- this_year |>
     defaultColDef = colDef(headerClass = "header"),
     searchable = TRUE,
     pagination = FALSE,
+    fullWidth = TRUE,
     columns = list(
       miembro = colDef(name = "Miembro"),
       aporte = colDef(name = "Aporte"),
