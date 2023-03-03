@@ -99,11 +99,11 @@ this_year <- aportes |>
   group_by(miembro) |>
   summarise(
     aporte = sum(aporte),
-    objetivo = max(nmonth) * 300,
-    balance = aporte - objetivo
+    objetivo = max(nmonth) * 300
   ) |>
   mutate(
-   aporte = ifelse(miembro == "Mac Daniel", aporte - 300, aporte)
+   objetivo = ifelse(miembro == "Mac daniel", objetivo - 300, objetivo),
+   balance = aporte - objetivo
   )
 
 # html table --------------------------------------------------------------
