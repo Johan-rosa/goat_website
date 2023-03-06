@@ -22,11 +22,6 @@ aportes <- read_excel("./data/aportes.xlsx", sheet = "Ingreso") |>
     miembro = str_to_sentence(miembro)
     )
 
-aportes |> filter(lubridate::year(fecha) == 2023) |>
-  group_by(miembro) |> 
-  summarise(total = sum(aporte)) |>
-  arrange(total)
-
 gastos <- read_excel("./data/aportes.xlsx", sheet = "Gastos") |>
   janitor::clean_names() |>
   mutate(
@@ -60,7 +55,7 @@ aportes_table_2 <- aportes %>%
   mutate(
     cantidad_aportes = map_dbl(data, nrow),
     total = map_dbl(data, ~sum(.x[["aporte"]], na.rm = TRUE)),
-    data = map(data, ~.x[,c("fecha", "aporte")] %>% arrange(desc(fecha)))
+    data = map(data, ~.x[,c("fecha", "aporte", "concepto")] %>% arrange(desc(fecha)))
     ) %>%
   select(miembro, cantidad_aportes, total, data) %>% 
   arrange(desc(total))
@@ -72,7 +67,7 @@ current_month <- aportes |>
   mutate(
     cantidad_aportes = map_dbl(data, nrow),
     total = map_dbl(data, ~sum(.x[["aporte"]], na.rm = TRUE)),
-    data = map(data, ~.x[,c("fecha", "aporte")] %>% arrange(desc(fecha)))
+    data = map(data, ~.x[,c("fecha", "aporte", "concepto")] %>% arrange(desc(fecha)))
   ) %>%
   select(miembro, cantidad_aportes, total, data) %>% 
   arrange(desc(total))
@@ -96,14 +91,15 @@ last_month <- aportes |>
 this_year <- aportes |>
   filter(lubridate::year(fecha) == 2023) |>
   mutate(nmonth = max(lubridate::month(fecha))) |>
-  group_by(miembro) |>
+  group_by(miembro, concepto) |>
   summarise(
     aporte = sum(aporte),
     objetivo = max(nmonth) * 300
   ) |>
+  pivot_wider(names_from = concepto, values_from = aporte) |> 
   mutate(
    objetivo = ifelse(miembro == "Mac daniel", objetivo - 300, objetivo),
-   balance = aporte - objetivo
+   balance = Aporte - objetivo
   )
 
 # html table --------------------------------------------------------------
@@ -197,7 +193,8 @@ tabla_multas <- multas |>
   )
 
 tabla_this_yer <- this_year |>
-  arrange(balance) |> 
+  arrange(balance) |>
+  select(miembro, `Técnica`, Aporte, objetivo, balance) |> 
   reactable(
     class = "aportes-table",
     defaultColDef = colDef(headerClass = "header"),
