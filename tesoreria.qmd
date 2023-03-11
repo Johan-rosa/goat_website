@@ -75,6 +75,7 @@ border: 1px solid hsl(213, 33%, 93%);
 
 ### `r stringr::str_to_sentence(format(max(aportes$fecha), "%B"))`
 ```{r}
+
 tabla_current_month
 ```
 

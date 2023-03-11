@@ -197,12 +197,12 @@ tabla_this_yer <- this_year |>
   select(miembro, `Técnica`, Aporte, objetivo, balance) |> 
   reactable(
     class = "aportes-table",
-    defaultColDef = colDef(headerClass = "header"),
+    defaultColDef = colDef(headerClass = "header", width = 70),
     searchable = TRUE,
     pagination = FALSE,
     fullWidth = TRUE,
     columns = list(
-      miembro = colDef(name = "Miembro"),
+      miembro = colDef(name = "Miembro", width = 80),
       aporte = colDef(name = "Aporte"),
       objetivo = colDef(name = "Objetivo"),
       balance = colDef(name = "Balance")
