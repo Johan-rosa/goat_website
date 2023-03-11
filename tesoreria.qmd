@@ -66,9 +66,9 @@ border: 1px solid hsl(213, 33%, 93%);
 ## Tabla de aportes al `r format(max(aportes$fecha), "%d de %B del %Y", locale = "spanish")` {.px-md-5 .d-flex .flex-column .align-items-center}
 
 ::: {d-flex}
-<span class="badge bg-success">Ingreso `r format(sum(aportes$aporte), big.mark = ",")`</span> {{< fa minus >}}
-<span class="badge bg-danger">Gasto `r format(sum(gastos$monto), big.mark = ",")`</span> {{< fa equals >}}
-<span class="badge bg-primary">Balance `r format(sum(aportes$aporte) - sum(gastos$monto), big.mark = ",")`</span>
+<span class="badge rounded-pill bg-success">Ingreso `r format(sum(aportes$aporte), big.mark = ",")`</span> {{< fa minus >}}
+<span class="badge rounded-pill bg-danger">Gasto `r format(sum(gastos$monto), big.mark = ",")`</span> {{< fa equals >}}
+<span class="badge rounded-pill bg-primary">Balance `r format(sum(aportes$aporte) - sum(gastos$monto), big.mark = ",")`</span>
 :::
 
 ::: { .panel-tabset }
