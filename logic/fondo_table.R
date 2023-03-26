@@ -188,8 +188,8 @@ tabla_multas <- multas |>
   reactable(
     fullWidth = TRUE,
     class = "aportes-table",
-    defaultColDef = colDef(headerClass = "header", width = 90),
-    columns = list(Fecha = colDef(width = 100))
+    defaultColDef = colDef(headerClass = "header", minWidth = 90),
+    columns = list(Fecha = colDef(minWidth = 100))
   )
 
 tabla_this_yer <- this_year |>
@@ -197,12 +197,12 @@ tabla_this_yer <- this_year |>
   select(miembro, `Técnica`, Aporte, objetivo, balance) |> 
   reactable(
     class = "aportes-table",
-    defaultColDef = colDef(headerClass = "header", width = 70),
+    defaultColDef = colDef(headerClass = "header", minWidth = 70),
     searchable = TRUE,
     pagination = FALSE,
     fullWidth = TRUE,
     columns = list(
-      miembro = colDef(name = "Miembro", width = 80),
+      miembro = colDef(name = "Miembro", minWidth = 80),
       aporte = colDef(name = "Aporte"),
       objetivo = colDef(name = "Objetivo"),
       balance = colDef(name = "Balance")
