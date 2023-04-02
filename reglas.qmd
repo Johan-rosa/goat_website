@@ -46,6 +46,22 @@ title: "Reglas de la liga"
 4. **Multa por peleas:** RD$ 500
 5. **Donaciones:** abiertas
 
+### Estatus de los miembros
+
+1. **Activo:** miembros que paga activamente y sin atrasos la cuota mensual, independiente de las asistencias
+2. **Inactivo:** todo aquel que solicitó a la directiva pausar su mebresía porque no podrá ir a la cancha por un tiempo prolongado.
+Estos miembros podrán ir esporádicamente a la liga, pero para jugar deben llevar al menos RD\$100 (SI NO LLEVA LOS RD\$ 100 NO PODRÁ JUGAR).
+3. **En atraso:** todo miembro que debe RD$ 300 o más 
+4.  **Suspendido:** Si debe RD$ 900 o más
+
+> A nadie se le acummularán más de tres meses de deuda, en ese caso pasará automáticamente a suspendido.
+
+### Consecuencias de cada estatus
+
+1. Los miembros en atraso juegan luego de que todos los miembros activos hayan jugado
+2. Los miembros inactivos juegan como cualquier otro miembro de la liga, en orden de llegada (Deben llevar sus 100)
+3. Los miembros Suspendidos no pueden jugar, a menos reduzcan su deuda a RD\600 o menos
+
 ### Gastos
 1. Compra de agua y hielo
 2. Arbitro
@@ -54,6 +70,7 @@ title: "Reglas de la liga"
 5. Gastos en viajes de la liga para jugar como invitados en otros lugares
 6. Cualquier gasto fuera de estos fines se someterá a votación en el grupo de whatsapp
 
+> Nota: Los artículos propiedad de la liga son de uso exclusivo de la liga, no se pueden prestar a nadie, con ninguna finalidad. Solo habrán excepciones si hay una votación en el grupo.
 
 ## Sobre el comité de organización y disciplina
 

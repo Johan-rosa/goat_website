@@ -171,7 +171,7 @@ tabla_last_month <- last_month %>%
   )
 
 tabla_gastos <- gastos |>
-  arrange(fecha) |> 
+  arrange(desc(fecha)) |> 
   select(fecha, item, monto) |> 
   setNames(c("Fecha", "Concepto", "Monto")) |>
   reactable(
