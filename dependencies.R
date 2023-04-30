@@ -1,2 +1,8 @@
+library(knitr)
+library(dplyr)
+library(tidyr)
+library(purrr)
 library(readxl)
+library(stringr)
 library(htmltools)
+slibrary(reactable)
