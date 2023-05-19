@@ -30,8 +30,18 @@ source("logic/fondo_table.R", echo = FALSE, verbose = FALSE)
 }
 }
 
+p {
+  text-align: center;
+}
+
 h2{
  border-bottom: none;
+ text-align: center
+}
+
+.panel-tabset {
+  max-width: 900px;
+  margin: auto;
 }
 
 .aportes-table {
@@ -62,7 +72,7 @@ border: 1px solid hsl(213, 33%, 93%);
 
 </style>
 
-## Tabla de aportes al `r format(max(aportes$fecha), "%d de %B del %Y", locale = "spanish")` {.px-md-5 .d-flex .flex-column .align-items-center}
+## Tabla de aportes al `r format(max(aportes$fecha), "%d de %B del %Y", locale = "spanish")` {.px-md-5}
 
 ::: {d-flex}
 <span class="badge rounded-pill bg-success">Ingreso `r format(sum(aportes$aporte), big.mark = ",")`</span> {{< fa minus >}}
@@ -73,6 +83,7 @@ border: 1px solid hsl(213, 33%, 93%);
 ::: { .panel-tabset }
 
 ### `r stringr::str_to_sentence(format(max(aportes$fecha), "%B"))`
+
 ```{r}
 
 tabla_current_month
