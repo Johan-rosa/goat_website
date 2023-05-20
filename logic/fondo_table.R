@@ -11,6 +11,9 @@ library(purrr)
 
 # Preparing data ----------------------------------------------------------
 
+miembros <- read_excel("./data/miembros.xlsx", sheet = "miembros") |>
+  mutate(fecha_inicio = as.Date(fecha_inicio))
+
 aportes <- read_excel("./data/aportes.xlsx", sheet = "Ingreso") |>
   janitor::clean_names() |>
   mutate(
@@ -40,16 +43,9 @@ dates_order <- aportes |>
   as.character() %>%
   c("miembro", "total", .)
 
-aportes_table <- aportes |>
-  group_by(miembro, label_fecha) |>
-  summarise(aporte = sum(aporte)) |> 
-  pivot_wider(names_from = label_fecha, values_from = aporte, values_fill = 0) |>
-  rowwise() |>
-  mutate(total = sum(c_across(where(is.numeric)))) |>
-  select(all_of(dates_order))
+# Summary tables ----------------------------------------------------------
 
-
-aportes_table_2 <- aportes %>%
+aportes_table <- aportes %>%
   group_by(miembro) %>%
   nest() %>%
   mutate(
@@ -88,23 +84,35 @@ last_month <- aportes |>
   arrange(desc(total))
   
 # balance_2023
-this_year <- aportes |>
+this_year <- 
+  aportes |>
   filter(lubridate::year(fecha) == 2023) |>
   mutate(nmonth = max(lubridate::month(fecha))) |>
   group_by(miembro, concepto) |>
   summarise(
     aporte = sum(aporte),
-    objetivo = max(nmonth) * 300
-  ) |>
-  pivot_wider(names_from = concepto, values_from = aporte) |> 
+    nmonth = max(nmonth)
+    ) |>
+  pivot_wider(names_from = concepto, values_from = aporte) |>
+  left_join(
+    select(miembros, nombre_pago, condicion, fecha_inicio),
+    by = c("miembro" = "nombre_pago")
+  ) |> 
   mutate(
-   objetivo = ifelse(miembro == "Mac daniel", objetivo - 300, objetivo),
-   balance = Aporte - objetivo
-  )
+    active_month = nmonth - (lubridate::month(fecha_inicio) - 1),
+   objetivo = case_when(
+     is.na(condicion) | condicion == "Inactivo" ~ 0,
+     TRUE ~ active_month * 300
+   ),
+   balance = case_when(
+     condicion == "Inactivo" ~ -300,
+     TRUE ~ Aporte - objetivo
+   )
+  ) |> select(-c(condicion, fecha_inicio, nmonth, active_month))
 
 # html table --------------------------------------------------------------
 
-tabla_aportes <- aportes_table_2 %>%
+tabla_aportes <- aportes_table %>%
   select(-data) %>%
   arrange(desc(total)) %>% 
   reactable(
@@ -120,7 +128,7 @@ tabla_aportes <- aportes_table_2 %>%
     details = function(index) {
       htmltools::div(
         style = "padding: 1rem",
-        reactable(aportes_table_2[["data"]][[index]], outlined = TRUE)
+        reactable(aportes_table[["data"]][[index]], outlined = TRUE)
       )
     },
     class = "aportes-table"
