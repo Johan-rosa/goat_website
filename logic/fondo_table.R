@@ -22,7 +22,7 @@ aportes <- read_excel("./data/aportes.xlsx", sheet = "Ingreso") |>
     label_fecha = forcats::fct_reorder(label_fecha, fecha),
     month = factor(format(fecha, "%b %Y", locale = "spanish")),
     month = forcats::fct_reorder(label_fecha, fecha),
-    miembro = str_to_sentence(miembro)
+    miembro = str_to_title(miembro)
     )
 
 gastos <- read_excel("./data/aportes.xlsx", sheet = "Gastos") |>
