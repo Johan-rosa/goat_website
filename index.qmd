@@ -9,26 +9,26 @@ title: "Miembros"
 #| echo: false
 
 
-miembros <- readxl::read_excel("data/miembros.xlsx") |>
-  dplyr::filter(!is.na(avatar_img))
-
-
-miembros_card <- function(name, avatar) {
-  member <- glue::glue(
-"
-<div class='member-card'>
-<div class='img-container'>
-<img src='images/avatars/{ avatar }'/>
-</div>
-
-<h5> { name } </h5>
-</div>
-
-"
-  )
-}
-
-purrr::walk2(miembros$nombre, miembros$avatar_img, miembros_card)
+# miembros <- readxl::read_excel("data/miembros.xlsx") |>
+#   dplyr::filter(!is.na(avatar_img))
+# 
+# 
+# miembros_card <- function(name, avatar) {
+#   member <- glue::glue(
+# "
+# <div class='member-card'>
+# <div class='img-container'>
+# <img src='images/avatars/{ avatar }'/>
+# </div>
+# 
+# <h5> { name } </h5>
+# </div>
+# 
+# "
+#   )
+# }
+# 
+# purrr::walk2(miembros$nombre, miembros$avatar_img, miembros_card)
 
 ```
 
