@@ -200,6 +200,11 @@ tabla_multas <- multas |>
     columns = list(Fecha = colDef(minWidth = 100))
   )
 
+balances <- this_year |>
+  arrange(balance) |>
+  select(miembro, `Técnica`, Aporte, objetivo, balance) |>
+  pull(balance)
+
 tabla_this_yer <- this_year |>
   arrange(balance) |>
   select(miembro, `Técnica`, Aporte, objetivo, balance) |> 
@@ -214,5 +219,12 @@ tabla_this_yer <- this_year |>
       aporte = colDef(name = "Aporte"),
       objetivo = colDef(name = "Objetivo"),
       balance = colDef(name = "Balance")
-    )
+    ),
+    rowStyle = function(index) {
+      if (balances[index] < -900) {
+        list(backgroundColor = "#ff000080")
+      } else if (balances[index] < -300) {
+        list(backgroundColor = "#eff76080")
+      }
+    }
   )
