@@ -82,33 +82,40 @@ last_month <- aportes |>
   ) %>%
   select(miembro, cantidad_aportes, total, data) %>% 
   arrange(desc(total))
-  
+
+current_year <- lubridate::year(lubridate::today())
+
 # balance_2023
 this_year <- 
   aportes |>
-  filter(lubridate::year(fecha) == 2023) |>
+  filter(lubridate::year(fecha) == current_year) |>
   mutate(nmonth = max(lubridate::month(fecha))) |>
   group_by(miembro, concepto) |>
   summarise(
     aporte = sum(aporte),
-    nmonth = max(nmonth)
-    ) |>
+    nmonth = max(nmonth),
+    .groups = "drop"
+  ) |>
   pivot_wider(names_from = concepto, values_from = aporte) |>
   left_join(
-    select(miembros, nombre_pago, condicion, fecha_inicio),
-    by = c("miembro" = "nombre_pago")
+    x = select(miembros, miembro = nombre_pago, condicion, fecha_inicio),
+    y = _,
+    by = c("miembro")
   ) |> 
   mutate(
+    nmonth = max(nmonth, na.rm = TRUE),
     active_month = nmonth - (lubridate::month(fecha_inicio) - 1),
-   objetivo = case_when(
-     is.na(condicion) | condicion == "Inactivo" ~ 0,
-     TRUE ~ active_month * 300
-   ),
-   balance = case_when(
-     condicion == "Inactivo" ~ -300,
-     TRUE ~ Aporte - objetivo
-   )
-  ) |> select(-c(condicion, fecha_inicio, nmonth, active_month))
+    Aporte = tidyr::replace_na(Aporte, 0),
+    objetivo = case_when(
+      is.na(condicion) | condicion == "Inactivo" ~ 0,
+      TRUE ~ active_month * 300
+    ),
+    balance = case_when(
+      condicion == "Inactivo" ~ -300,
+      TRUE ~ Aporte - objetivo
+    )
+  ) |> 
+  select(-c(condicion, fecha_inicio, nmonth, active_month))
 
 # html table --------------------------------------------------------------
 
@@ -202,12 +209,12 @@ tabla_multas <- multas |>
 
 balances <- this_year |>
   arrange(balance) |>
-  select(miembro, `Técnica`, Aporte, objetivo, balance) |>
+  select(miembro, matches("Técnica"), Aporte, objetivo, balance) |>
   pull(balance)
 
 tabla_this_yer <- this_year |>
-  arrange(balance) |>
-  select(miembro, `Técnica`, Aporte, objetivo, balance) |> 
+  arrange(desc(balance)) |>
+  select(miembro, matches("Técnica"), Aporte, objetivo, balance) |> 
   reactable(
     class = "aportes-table",
     defaultColDef = colDef(headerClass = "header", minWidth = 70),
