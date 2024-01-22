@@ -99,7 +99,6 @@ tabla_this_yer
 tabla_aportes
 ```
 
-
 ### Gastos
 
 ```{r}
