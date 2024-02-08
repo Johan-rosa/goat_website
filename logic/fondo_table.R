@@ -208,7 +208,7 @@ tabla_multas <- multas |>
   )
 
 balances <- this_year |>
-  arrange(balance) |>
+  arrange(desc(balance)) |>
   select(miembro, matches("Técnica"), Aporte, objetivo, balance) |>
   pull(balance)
 
