@@ -165,6 +165,22 @@ img{
 
 <div class='member-card'>
 <div class='img-container'>
+<img src='images/avatars/robert.jpg'/>
+</div>
+
+<h5> Robert </h5>
+</div>
+
+<div class='member-card'>
+<div class='img-container'>
+<img src='images/avatars/orlando.jpg'/>
+</div>
+
+<h5> Orlando </h5>
+</div>
+
+<div class='member-card'>
+<div class='img-container'>
 <img src='images/avatars/yeyo.jpg'/>
 </div>
 
